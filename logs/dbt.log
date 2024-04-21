@@ -1,0 +1,26 @@
+
+
+============================== 2024-04-21 15:07:28.056664 | 23ee6a5f-cdd6-4ce7-8177-07ae4a534d88 ==============================
+[0m15:07:28.056664 [info ] [MainThread]: Running with dbt=1.4.9
+[0m15:07:28.059715 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'project_name': '.', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m15:07:28.060047 [debug] [MainThread]: Tracking: tracking
+[0m15:07:28.063660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7feaf413b6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7feaf4a91410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7feaf4a61a90>]}
+[0m15:07:32.252584 [debug] [MainThread]: Starter project path: /usr/local/dbt1.4/lib/python3.11/site-packages/dbt/include/starter_project
+[0m15:07:40.770314 [info ] [MainThread]: 
+Your new dbt project "mage" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:07:40.771443 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7feaf467cd50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7feaf4925810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7feaf50dff10>]}
+[0m15:07:40.772175 [debug] [MainThread]: Flushing usage events

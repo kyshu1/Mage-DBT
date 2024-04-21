@@ -1,0 +1,86 @@
+version: 2
+models:
+  - name: elections
+    description: Elections data
+    columns:
+      - name: Annee
+        description: annee
+        tests: [not_null]
+      - name: Tour
+        description: tour
+        tests: [not_null]
+      - name: Departement
+        description: departement
+        tests: [not_null]
+      - name: Inscrits
+        description: inscrits
+        tests: [not_null]
+      - name: Votants
+        description: votants
+        tests: [not_null]
+      - name: Abstentions
+        description: abstentions
+        tests: [not_null]
+      - name: Nom
+        description: nom
+        tests: [not_null]
+      - name: Voix
+        description: voix
+        tests: [not_null]
+
+  - name: resultats_elections
+    description: Elections results
+    columns:
+      - name: Annee
+        description: annee
+        tests: [not_null]
+      - name: Nom
+        description: nom
+        tests: [not_null]
+      - name: Taux
+        description: taux
+        tests: [not_null]
+
+  - name: securite
+    description: "Description du modèle DBT pour les données de géographie."
+    columns:
+      - name: classe
+        description: "Type de classement."
+        tests:
+          - not_null
+      - name: annee
+        description: "Année de référence des données."
+        tests:
+          - not_null
+      - name: Code_region
+        description: "Code numérique identifiant la région."
+        tests:
+          - not_null
+      - name: unite_de_compte
+        description: "Unité de mesure utilisée dans les données."
+        tests:
+          - not_null
+      - name: millPOP
+        description: "Population en millions."
+        tests:
+          - not_null
+      - name: millLOG
+        description: "Nombre de logements en millions."
+        tests:
+          - not_null
+      - name: faits
+        description: "Nombre total de faits enregistrés."
+        tests:
+          - not_null
+      - name: POP
+        description: "Population totale."
+        tests:
+          - not_null
+      - name: LOG
+        description: "Détails des logements, possible problème de formatage."
+        tests:
+          - not_null
+      - name: tauxpourmille
+        description: "Taux pour mille, avec formatage de virgule pour les décimales."
+        tests:
+          - not_null
