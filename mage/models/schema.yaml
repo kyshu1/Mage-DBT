@@ -6,6 +6,11 @@ models:
       - name: Annee
         description: annee
         tests: [not_null]
+        meta:
+          dimension:
+            type: date
+          metrics:
+            type: date
       - name: Tour
         description: tour
         tests: [not_null]
@@ -52,6 +57,11 @@ models:
         description: "Année de référence des données."
         tests:
           - not_null
+          meta:
+          dimension:
+            type: date
+          metrics:
+            type: date
       - name: Code_region
         description: "Code numérique identifiant la région."
         tests:
@@ -72,10 +82,18 @@ models:
         description: "Nombre total de faits enregistrés."
         tests:
           - not_null
+        meta:
+          metrics:
+            number_of_users:
+              type: count
       - name: POP
         description: "Population totale."
         tests:
           - not_null
+        meta:
+          metrics:
+            number_of_users:
+              type: count
       - name: LOG
         description: "Détails des logements, possible problème de formatage."
         tests:
@@ -84,3 +102,7 @@ models:
         description: "Taux pour mille, avec formatage de virgule pour les décimales."
         tests:
           - not_null
+        meta:
+          metrics:
+            number_of_users:
+              type: count
