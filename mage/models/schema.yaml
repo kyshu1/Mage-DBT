@@ -133,7 +133,7 @@ models:
             number_of_tauxpourmille:
               type: count
 
-name: donnees_emploi_et_salaire
+name: emplois
 description: "Tableau des données d'emploi et de salaire par zone d'emploi et région."
 columns:
   - name: zone_d_emploi
@@ -154,10 +154,10 @@ columns:
       - not_null
     meta:
       dimension:
-      type: date
+        type: date
       metrics:
-          years_of_enregistrement:
-            type: date
+        years_of_enregistrement:
+          type: date
   - name: trimestre
     description: "Trimestre de l'enregistrement."
     tests:
@@ -168,10 +168,10 @@ columns:
        - not_null
     meta:
       dimension:
-      type: date
+        type: date
       metrics:
-          date_of_dernierjouredutrimestre:
-            type: date
+        date_of_dernierjouredutrimestre:
+          type: date
   - name: code_region
     description: "Code numérique de la région."
     tests:
