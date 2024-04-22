@@ -133,66 +133,66 @@ models:
             number_of_tauxpourmille:
               type: count
 
-name: emplois
-description: "Tableau des données d'emploi et de salaire par zone d'emploi et région."
-columns:
-  - name: zone_d_emploi
-    description: "Nom de la zone d'emploi."
-    tests:
-      - not_null
-  - name: region
-    description: "Nom de la région."
-    tests:
-      - not_null
-  - name: zone_d_emploi_regionalisee
-    description: "Zone d'emploi régionalisée."
-    tests:
-      - not_null
-  - name: annee
-    description: "Année de l'enregistrement."
-    tests:
-      - not_null
-    meta:
-      dimension:
-        type: date
-      metrics:
-        years_of_enregistrement:
-          type: date
-  - name: trimestre
-    description: "Trimestre de l'enregistrement."
-    tests:
-      - not_null
-  - name: dernier_jour_du_trimestre
-    description: "Date du dernier jour du trimestre."
-    tests:
-       - not_null
-    meta:
-      dimension:
-        type: date
-      metrics:
-        date_of_dernierjouredutrimestre:
-          type: date
-  - name: code_region
-    description: "Code numérique de la région."
-    tests:
-      - not_null
-  - name: code_zone_d_emploi
-    description: "Code numérique de la zone d'emploi."
-    tests:
-      - not_null
-  - name: effectifs_salaries_brut
-    description: "Nombre d'effectifs salariés brut."
-    tests:
-      - not_null
-    meta:
-      metrics:
-        effectifs_salaries_brut_count:
-          type: count
-  - name: masse_salariale_brut
-    description: "Montant de la masse salariale brute."
-    tests:
-       - not_null
-    meta:
-      metrics:
-        masse_salariale_brut_count:
-          type: count
+  - name: emplois
+    description: "Tableau des données d'emploi et de salaire par zone d'emploi et région."
+    columns:
+      - name: zone_d_emploi
+        description: "Nom de la zone d'emploi."
+        tests:
+          - not_null
+      - name: region
+        description: "Nom de la région."
+        tests:
+          - not_null
+      - name: zone_d_emploi_regionalisee
+        description: "Zone d'emploi régionalisée."
+        tests:
+          - not_null
+      - name: annee
+        description: "Année de l'enregistrement."
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: date
+          metrics:
+            years_of_enregistrement:
+              type: date
+      - name: trimestre
+        description: "Trimestre de l'enregistrement."
+        tests:
+          - not_null
+      - name: dernier_jour_du_trimestre
+        description: "Date du dernier jour du trimestre."
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: date
+          metrics:
+            date_of_dernierjouredutrimestre:
+              type: date
+      - name: code_region
+        description: "Code numérique de la région."
+        tests:
+          - not_null
+      - name: code_zone_d_emploi
+        description: "Code numérique de la zone d'emploi."
+        tests:
+          - not_null
+      - name: effectifs_salaries_brut
+        description: "Nombre d'effectifs salariés brut."
+        tests:
+          - not_null
+        meta:
+          metrics:
+            effectifs_salaries_brut_count:
+              type: count
+      - name: masse_salariale_brut
+        description: "Montant de la masse salariale brute."
+        tests:
+          - not_null
+        meta:
+          metrics:
+            masse_salariale_brut_count:
+              type: count
