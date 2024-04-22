@@ -10,7 +10,8 @@ models:
           dimension:
             type: date
           metrics:
-            type: date
+            years_for_election:
+              type: date
       - name: Tour
         description: tour
         tests: [not_null]
@@ -20,32 +21,56 @@ models:
       - name: Inscrits
         description: inscrits
         tests: [not_null]
+        meta:
+          metrics:
+            number_of_inscrits:
+              type: count
       - name: Votants
         description: votants
         tests: [not_null]
+        meta:
+          metrics:
+            number_of_votants:
+              type: count
       - name: Abstentions
         description: abstentions
         tests: [not_null]
+        meta:
+          metrics:
+            number_of_abstention:
+              type: count
       - name: Nom
         description: nom
         tests: [not_null]
       - name: Voix
         description: voix
         tests: [not_null]
-
+        meta:
+          metrics:
+            number_of_voix:
+             type: count
   - name: resultats_elections
     description: Elections results
     columns:
       - name: Annee
         description: annee
         tests: [not_null]
+        meta:
+          dimension:
+            type: date
+          metrics:
+            years_of_electionresult:
+              type: date
       - name: Nom
         description: nom
         tests: [not_null]
       - name: Taux
         description: taux
         tests: [not_null]
-
+        meta:
+          metrics:
+            taux_en_count:
+               type: count
   - name: securite
     description: "Description du modèle DBT pour les données de géographie."
     columns:
@@ -58,10 +83,11 @@ models:
         tests:
           - not_null
           meta:
-          dimension:
-            type: date
-          metrics:
-            type: date
+            dimension:
+              type: date
+            metrics:
+              years_of_secu:
+                type: date
       - name: Code_region
         description: "Code numérique identifiant la région."
         tests:
@@ -84,7 +110,7 @@ models:
           - not_null
         meta:
           metrics:
-            number_of_users:
+            number_of_faits:
               type: count
       - name: POP
         description: "Population totale."
@@ -92,7 +118,7 @@ models:
           - not_null
         meta:
           metrics:
-            number_of_users:
+            number_of_populations:
               type: count
       - name: LOG
         description: "Détails des logements, possible problème de formatage."
@@ -104,5 +130,72 @@ models:
           - not_null
         meta:
           metrics:
-            number_of_users:
+            number_of_tauxpourmille:
               type: count
+
+name: donnees_emploi_et_salaire
+description: "Tableau des données d'emploi et de salaire par zone d'emploi et région."
+columns:
+  - name: zone_d_emploi
+    description: "Nom de la zone d'emploi."
+    tests:
+      - not_null
+  - name: region
+    description: "Nom de la région."
+    tests:
+      - not_null
+  - name: zone_d_emploi_regionalisee
+    description: "Zone d'emploi régionalisée."
+     tests:
+      - not_null
+  - name: annee
+    description: "Année de l'enregistrement."
+     tests:
+      - not_null
+    meta:
+      dimension:
+        type: date
+       metrics:
+          years_of_enregistrement:
+            type: date
+  - name: trimestre
+    description: "Trimestre de l'enregistrement."
+    tests:
+      - not_null
+  - name: dernier_jour_du_trimestre
+    description: "Date du dernier jour du trimestre."
+     tests:
+       - not_null
+    meta:
+      dimension:
+        type: date
+       metrics:
+          date_of_dernierjouredutrimestre:
+            type: date
+  - name: code_region
+    description: "Code numérique de la région."
+    tests:
+      - not_null
+  - name: code_zone_d_emploi
+    description: "Code numérique de la zone d'emploi."
+    tests:
+       - not_null
+  - name: effectifs_salaries_brut
+    description: "Nombre d'effectifs salariés brut."
+    tests:
+       - not_null
+    meta:
+      metrics:
+        effectifs_salaries_brut_count:
+          type: count
+  - name: masse_salariale_brut
+    description: "Montant de la masse salariale brute."
+     tests:
+       - not_null
+    meta:
+      metrics:
+        masse_salariale_brut_count:
+          type: count
+
+    
+    
