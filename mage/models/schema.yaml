@@ -82,12 +82,12 @@ models:
         description: "Année de référence des données."
         tests:
           - not_null
-          meta:
-            dimension:
+        meta:
+          dimension:
+            type: date
+          metrics:
+            years_of_secu:
               type: date
-            metrics:
-              years_of_secu:
-                type: date
       - name: Code_region
         description: "Code numérique identifiant la région."
         tests:
@@ -146,16 +146,16 @@ columns:
       - not_null
   - name: zone_d_emploi_regionalisee
     description: "Zone d'emploi régionalisée."
-     tests:
+    tests:
       - not_null
   - name: annee
     description: "Année de l'enregistrement."
-     tests:
+    tests:
       - not_null
     meta:
       dimension:
-        type: date
-       metrics:
+      type: date
+      metrics:
           years_of_enregistrement:
             type: date
   - name: trimestre
@@ -164,12 +164,12 @@ columns:
       - not_null
   - name: dernier_jour_du_trimestre
     description: "Date du dernier jour du trimestre."
-     tests:
+    tests:
        - not_null
     meta:
       dimension:
-        type: date
-       metrics:
+      type: date
+      metrics:
           date_of_dernierjouredutrimestre:
             type: date
   - name: code_region
@@ -179,18 +179,18 @@ columns:
   - name: code_zone_d_emploi
     description: "Code numérique de la zone d'emploi."
     tests:
-       - not_null
+      - not_null
   - name: effectifs_salaries_brut
     description: "Nombre d'effectifs salariés brut."
     tests:
-       - not_null
+      - not_null
     meta:
       metrics:
         effectifs_salaries_brut_count:
           type: count
   - name: masse_salariale_brut
     description: "Montant de la masse salariale brute."
-     tests:
+    tests:
        - not_null
     meta:
       metrics:
