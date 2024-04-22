@@ -196,6 +196,3 @@ columns:
       metrics:
         masse_salariale_brut_count:
           type: count
-
-    
-    
