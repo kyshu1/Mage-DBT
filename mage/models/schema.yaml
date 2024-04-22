@@ -82,12 +82,6 @@ models:
         description: "Année de référence des données."
         tests:
           - not_null
-        meta:
-          dimension:
-            type: date
-          metrics:
-            years_of_secu:
-              type: date
       - name: Code_region
         description: "Code numérique identifiant la région."
         tests:
