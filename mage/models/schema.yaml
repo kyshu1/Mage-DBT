@@ -24,21 +24,21 @@ models:
         meta:
           metrics:
             number_of_inscrits:
-              type: count
+              type: number
       - name: Votants
         description: votants
         tests: [not_null]
         meta:
           metrics:
             number_of_votants:
-              type: count
+              type: number
       - name: Abstentions
         description: abstentions
         tests: [not_null]
         meta:
           metrics:
             number_of_abstention:
-              type: count
+              type: number
       - name: Nom
         description: nom
         tests: [not_null]
@@ -48,7 +48,7 @@ models:
         meta:
           metrics:
             number_of_voix:
-             type: count
+              type: number
   - name: resultats_elections
     description: Elections results
     columns:
@@ -69,8 +69,8 @@ models:
         tests: [not_null]
         meta:
           metrics:
-            taux_en_count:
-               type: count
+            taux_en_number:
+              type: number
   - name: securite
     description: "Description du modèle DBT pour les données de géographie."
     columns:
@@ -105,7 +105,7 @@ models:
         meta:
           metrics:
             number_of_faits:
-              type: count
+              type: number
       - name: POP
         description: "Population totale."
         tests:
@@ -113,7 +113,7 @@ models:
         meta:
           metrics:
             number_of_populations:
-              type: count
+              type: number
       - name: LOG
         description: "Détails des logements, possible problème de formatage."
         tests:
@@ -125,8 +125,7 @@ models:
         meta:
           metrics:
             number_of_tauxpourmille:
-              type: count
-
+              type: number
   - name: emplois
     description: "Tableau des données d'emploi et de salaire par zone d'emploi et région."
     columns:
@@ -146,12 +145,6 @@ models:
         description: "Année de l'enregistrement."
         tests:
           - not_null
-        meta:
-          dimension:
-            type: date
-          metrics:
-            years_of_enregistrement:
-              type: date
       - name: trimestre
         description: "Trimestre de l'enregistrement."
         tests:
@@ -180,13 +173,13 @@ models:
           - not_null
         meta:
           metrics:
-            effectifs_salaries_brut_count:
-              type: count
+            effectifs_salaries_brut_number:
+              type: number
       - name: masse_salariale_brut
         description: "Montant de la masse salariale brute."
         tests:
           - not_null
         meta:
           metrics:
-            masse_salariale_brut_count:
-              type: count
+            masse_salariale_brut_number:
+              type: number
